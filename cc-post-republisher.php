@@ -42,6 +42,14 @@ if ( is_admin() ) {
 }
 
 /**
+ * Functions to run on plugin activation
+ */
+function activate_cc_post_republisher() {
+	CC_Post_Republisher_Admin::default_general_settings();
+}
+register_activation_hook( __FILE__, 'activate_cc_post_republisher' );
+
+/**
  * Load the plugin textdomain
  */
 function cc_post_republisher_init() {
@@ -65,7 +73,7 @@ function cc_post_republisher_register_block() {
 	wp_register_script(
 		'cc-post-republisher-modal',
 		plugins_url( 'license-block/modal.js', __FILE__ ),
-		array( 'jquery', 'wp-blocks', 'wp-element', 'wp-editor' ),
+		array( 'jquery' ),
 		CCPR_VERSION,
 		true
 	);
@@ -84,18 +92,18 @@ function cc_post_republisher_register_block() {
 			'style'         => 'cc-post-republisher-style',
 		)
 	);
-
-	wp_enqueue_script( 'cc-post-republisher-modal' );
 }
 add_action( 'init', 'cc_post_republisher_register_block' );
 
 /**
- * Functions to run on plugin activation
+ * Enqueue modal script on singular post pages only
  */
-function activate_cc_post_republisher() {
-	CC_Post_Republisher_Admin::default_general_settings();
+function cc_post_republisher_enqueue_modal() {
+	if ( is_singular( 'post' ) ) {
+		wp_enqueue_script( 'cc-post-republisher-modal' );
+	}
 }
-register_activation_hook( __FILE__, 'activate_cc_post_republisher' );
+add_action( 'wp_enqueue_scripts', 'cc_post_republisher_enqueue_modal' );
 
 // Initialize the plugin
 add_action(
