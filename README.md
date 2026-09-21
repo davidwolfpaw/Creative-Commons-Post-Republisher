@@ -27,13 +27,13 @@ This plugin allows you to add a button to your site's posts which will display t
 
 1. Install and activate the plugin.
 2. Navigate to the Creative Commons settings page under Settings in the WordPress dashboard.
-3. Edit the terms text andv select the license type that you want to use as a default.
+3. Edit the terms text and select the license type that you want to use as a default.
 4. On individual posts, you can select a different license type to use, or set that particular post to not Creative Commons licensed.
 
 ## Changelog
 
 ### 2.2.0
-* Remove deactivation option to remove block from all posts
+* Remove deactivation option to remove block from all posts (no longer needed)
 * Modal script now loads only on singular post pages
 
 ### 2.1.0
