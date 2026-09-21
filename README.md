@@ -4,7 +4,7 @@ Donate link: https://david.garden/
 Tags: creative commons, licensing
 Requires at least: 4.0.0
 Tested up to: 6.5.4
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ This plugin allows you to add a button to your site's posts which will display t
 | **Tags:**                | creative commons, licensing |
 | **Requires at least:**   | 4.0.0                       |
 | **Tested up to:**        | 6.5.4                       |
-| **Stable tag:**          | 2.1.0                       |
+| **Stable tag:**          | 2.2.0                       |
 | **[License](#License):** | [GPLv3 or later][gplv3]     |
 
 This plugin allows you to add a button to your site's posts which will display terms and licensing for Creative Commons (CC) reposting, as well as the title and content of the post for easy sharing. This is useful for sites that want to easily and clearly share their content with others.
@@ -31,6 +31,10 @@ This plugin allows you to add a button to your site's posts which will display t
 4. On individual posts, you can select a different license type to use, or set that particular post to not Creative Commons licensed.
 
 ## Changelog
+
+### 2.2.0
+* Remove deactivation option to remove block from all posts
+* Modal script now loads only on singular post pages
 
 ### 2.1.0
 * Allows plugin to function in Classic Editor as v1.4 did
